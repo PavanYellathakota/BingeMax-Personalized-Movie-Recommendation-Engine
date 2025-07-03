@@ -1,0 +1,100 @@
+movie-recommendation-system/
+│
+├── Dockerfile                      #FastAPI Dockerfile (used by API service)
+├── docker-compose.yml              #Main orchestration file
+├── requirements.txt                #Shared dependencies for API + Spark
+├── Struct.aurdiono                 #Project Structure
+├── .gitignore               		#.gitignore 
+├── .dockerignore              		#.dockerignore
+├── README.md              			#markdown
+│
+├── venv/                           #virtual env
+│
+├── airflow/                        #Airflow setup
+│   ├── dags/
+│   │   └── __init__.py
+│   │   └── train_and_promote_als.py    #DAG: ALS training + MLflow promotion
+│   │   └── retrain_model_dag.py  		#DAG: retrain_model_dag.py
+│   ├── plugins/                        #(optional) custom operators/hooks
+│   │   └── __init__.py
+│   ├── logs/    
+│   ├── Dockerfile                     #Airflow-specific Dockerfile
+│   └── requirements.txt       		   #Airflow-only Python deps (mlflow, pyspark, etc.)
+│   └── airflow.cfg    
+│
+├── data/                        #data
+│   ├── external/
+│   │   └── user_interactions.csv
+│   ├── processed/
+│   │   └── features.parquet
+│   │   └── merged_data.parquet
+│   │   └── similarity_matrix.npz
+│   ├── raw/
+│   │   └── name.basics.tsv
+│   │   └── title.akas.tsv
+│   │   └── title.basics.tsv
+│   │   └── title.crew.tsv
+│   │   └── title.episode.tsv
+│   │   └── title.principals.tsv
+│   │   └── title.ratings.tsv
+│
+├── streamlit_app/                 #Streamlit-based frontend UI
+│   ├── app.py                     #Main Streamlit app
+│   ├── Dockerfile.streamlit       #Dockerfile for UI container
+│   └── requirements.txt           #Streamlit dependencies
+│
+├── src/                           #Core source code
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── main.py                #FastAPI entrypoint
+│   │   └── routes.py               #routes
+│   │
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── load_data.py
+│   │   ├── preprocess.py
+│   │   └── feature_engineer.py
+│   │
+│   ├── models/
+│   │   ├── als/
+│   │   │    ├── train_als.py
+│   │   ├── __init__.py
+│   │   ├── collaborative.py       #ALS
+│   │   ├── content_based.py       #Optional (cosine sim)
+│   │   ├── hybrid.py              #Optional hybrid logic
+│   │   └── train_als.py           #PySpark ALS trainer + MLflow logger
+│   │
+│   ├── evaluation/
+│   │   ├── __init__.py
+│   │   └── metrics.py             #RMSE evaluator etc.
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       ├── logging.py
+│       ├── config.py
+│       └── mlflow/
+│           ├── __init__.py
+│           └── mlflow_utils.py   #Get latest model, promote, etc.
+│
+├── mlruns/                        #MLflow tracking directory (auto-created)
+│
+├── notebooks/                     #Exploratory work
+│   ├── data_exploration.ipynb
+│   └── model_experiments.ipynb
+│
+├── scripts/                       #CLI scripts (optional)
+│   ├── train.py
+│   ├── evaluate.py
+│   └── serve.py
+│
+├── tests/                         #Unit tests
+│   ├── __init__.py
+│   ├── test_data.py
+│   ├── test_features.py
+│   └── test_models.py
+│
+├── config/
+│   └── config.yaml                #Global parameters (paths, thresholds, etc.)
+│
+├── .gitignore
+└── README.md                      #(optional) will generate if you want

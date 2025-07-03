@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile  # FastAPI Dockerfile at project root
+    container_name: movie-recommendation-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app/src
+    depends_on:
+      - mlflow
+    restart: always
+    
+  streamlit:
+    build:
+      context: ./streamlit_app
+      dockerfile: Dockerfile.streamlit
+    container_name: movie-recommendation-ui
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api:8000
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow
+    container_name: mlflow
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    command: mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri sqlite:///mlflow.db
+
+  airflow:
+    build:
+      context: .
+      dockerfile: airflow/Dockerfile
+    image: movie_recommendation_system-airflow
+    container_name: airflow
+    restart: always
+    depends_on:
+      - mlflow
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/opt/airflow/src
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./data:/opt/airflow/data
+    environment:
+      - PYTHONPATH=/opt/airflow/src
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - _AIRFLOW_WWW_USER_USERNAME=airflow
+      - _AIRFLOW_WWW_USER_PASSWORD=airflow
+    entrypoint: >
+      bash -c "
+      airflow db init &&
+      airflow users create --username airflow --firstname Admin --lastname User --role Admin --email airflow@airflow.com --password airflow || true &&
+      airflow scheduler & airflow webserver"
+
+volumes:
+  airflow_data:

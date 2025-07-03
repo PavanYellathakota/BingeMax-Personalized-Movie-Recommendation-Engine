@@ -1,0 +1,44 @@
+
+# === Python Cache Files ===
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# === Jupyter & Notebooks ===
+*.ipynb
+.ipynb_checkpoints/
+notebooks/
+
+# === IDEs and Editor Folders ===
+.vscode/
+.idea/
+
+# === Virtual Environments ===
+venv/
+.venv/
+
+# === Data & Artifacts ===
+*.parquet
+*.npz
+*.tsv
+*.csv
+*.db
+*.sqlite3
+*.zip
+
+# === Raw & External Data ===
+data/raw/
+data/external/
+data/processed/*.parquet
+data/processed/*.npz
+
+# === Airflow & MLflow Runtime Files ===
+mlruns/
+airflow/logs/
+airflow/__pycache__/
+
+# === Git & Misc ===
+.git/
+*.md
+Struct.aurdiono
