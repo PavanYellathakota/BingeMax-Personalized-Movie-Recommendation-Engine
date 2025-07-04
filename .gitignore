@@ -19,8 +19,10 @@ venv/
 .venv/
 
 # === Data & Artifacts ===
-
+*.parquet
+*.npz
 *.tsv
+*.csv
 *.db
 *.sqlite3
 *.zip
@@ -28,6 +30,8 @@ venv/
 # === Raw & External Data ===
 data/raw/
 data/external/
+data/processed/*.parquet
+data/processed/*.npz
 
 # --- Allow minimal required data ---
 !data/processed/interactions.parquet
@@ -42,4 +46,5 @@ airflow/__pycache__/
 
 # === Git & Misc ===
 .git/
+
 
