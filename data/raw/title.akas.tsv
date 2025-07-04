@@ -1,0 +1,16 @@
+titleId	ordering	title	region	language	types	attributes	isOriginalTitle
+tt0000001	1	Carmencita	\N	\N	original	\N	1
+tt0000001	2	Carmencita	DE	\N	\N	literal title	0
+tt0000001	3	Carmencita	US	\N	imdbDisplay	\N	0
+tt0000001	4	Carmencita - spanyol tánc	HU	\N	imdbDisplay	\N	0
+tt0000001	5	Καρμενσίτα	GR	\N	imdbDisplay	\N	0
+tt0000001	6	Карменсита	RU	\N	imdbDisplay	\N	0
+tt0000001	7	Карменсіта	UA	\N	imdbDisplay	\N	0
+tt0000001	8	カルメンチータ	JP	ja	imdbDisplay	\N	0
+tt0000002	1	Le clown et ses chiens	\N	\N	original	\N	1
+tt0000002	2	A bohóc és kutyái	HU	\N	imdbDisplay	\N	0
+tt0000002	3	Clovnul si cainii sai	RO	\N	imdbDisplay	\N	0
+tt0000002	4	Der Clown und seine Hunde	DE	\N	\N	literal title	0
+tt0000002	5	Le clown et ses chiens	FR	\N	imdbDisplay	\N	0
+tt0000002	6	The Clown and His Dogs	US	\N	\N	literal English title	0
+tt0000002	7	Клоун и его собаки	RU	\N	imdbDisplay	\N	0

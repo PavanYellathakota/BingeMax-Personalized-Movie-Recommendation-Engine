@@ -19,19 +19,13 @@ venv/
 .venv/
 
 # === Data & Artifacts ===
-*.parquet
-*.npz
-*.tsv
-*.csv
+
 *.db
 *.sqlite3
 *.zip
 
 # === Raw & External Data ===
-data/raw/
-data/external/
-data/processed/*.parquet
-data/processed/*.npz
+
 
 # --- Allow minimal required data ---
 !data/processed/interactions.parquet
