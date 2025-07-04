@@ -68,6 +68,10 @@ docker compose up --build
 | Airflow UI     | [http://localhost:8080](http://localhost:8080) (user: airflow / pw: airflow) |
 
 ---
+## 📂 Data Source
+
+- This project uses publicly available, non-commercial movie data from [IMDb Datasets](https://datasets.imdbws.com/).
+- The dataset includes metadata such as titles, genres, user ratings, and more.
 
 ## 📁 Project Structure
 
