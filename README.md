@@ -7,7 +7,7 @@
   <img src="assets/imgs/rec1.png" alt="BingeMax Network Graph UI" width="800">
 </p>
 
-[![Watch the Demo on YouTube](https://img.shields.io/badge/YouTube-Demo%20Video-red)](https://www.youtube.com/watch?v=Ams4sEn50cw)
+[![Watch the Demo on YouTube](https://img.shields.io/badge/YouTube-Demo%20Video-red)](https://www.youtube.com/watch?v=Ams4sEn5)
 
 ---
 
@@ -204,7 +204,7 @@ Licensed under the [MIT License](./LICENSE).
 ## 👨‍💻 Author
 
 **Pavan Yellathakota**  
-Data Scientist | MLOps Engineer
+Data Scientist | Machine Learning practitioner
 
 📧 pavan.yellathakota.ds@gmail.com  
 🌐 [LinkedIn](https://www.linkedin.com/in/pavanyellathakota/) <!-- Replace with your actual profile -->
