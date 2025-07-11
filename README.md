@@ -204,7 +204,7 @@ Licensed under the [MIT License](./LICENSE).
 ## 👨‍💻 Author
 
 **Pavan Yellathakota**  
-Data Scientist | MLOps Engineer
+Data Scientist | Machine Learning practitioner
 
 📧 pavan.yellathakota.ds@gmail.com  
 🌐 [LinkedIn](https://www.linkedin.com/in/pavanyellathakota/) <!-- Replace with your actual profile -->
