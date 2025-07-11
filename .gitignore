@@ -18,13 +18,15 @@ notebooks/
 venv/
 .venv/
 
+
 # === Data & Artifacts ===
 
 *.db
 *.sqlite3
 *.zip
 
-# === Raw & External Data ===
+# === Tests ===
+tests/
 
 
 # --- Allow minimal required data ---

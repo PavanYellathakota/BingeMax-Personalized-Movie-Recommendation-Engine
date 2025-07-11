@@ -87,12 +87,6 @@ movie-recommendation-system/
 │   ├── evaluate.py
 │   └── serve.py
 │
-├── tests/                         #Unit tests
-│   ├── __init__.py
-│   ├── test_data.py
-│   ├── test_features.py
-│   └── test_models.py
-│
 ├── config/
 │   └── config.yaml                #Global parameters (paths, thresholds, etc.)
 │
